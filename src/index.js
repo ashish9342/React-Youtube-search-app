@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import SearchBar from './components/search_bar';
 //creating a component
 
 
@@ -8,8 +10,11 @@ import ReactDOM from 'react-dom';
 //     // jsx
 // }
 
-const App =  () => {
-    return <div> Hi! </div>;
+const App = () => {
+    return (<div >
+        <SearchBar />        
+        </div>
+    );
     // jsx
 }
 
@@ -19,4 +24,4 @@ const App =  () => {
 // target container is not a DOM element
 // second argument, where to insert the app
 
-ReactDOM.render(<App/>, document.querySelector('.container'))
+ReactDOM.render( < App / > , document.querySelector('.container'))
