@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+//creating a component
 
-import App from './components/app';
-import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// const App = function(){
+//     return <div>Hi!</div>
+//     // jsx
+// }
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+const App =  () => {
+    return <div> Hi! </div>;
+    // jsx
+}
+
+// take this component generated HTML and put it on the page(DOM)
+// React.render(App);
+// ReactDOM.render(App) pass the instance of the app, instead of passing the whole app.
+// target container is not a DOM element
+// second argument, where to insert the app
+
+ReactDOM.render(<App/>, document.querySelector('.container'))
