@@ -40,7 +40,7 @@ class SearchBar extends Component {
 
     // setting up state
     return (
-      <div>
+      <div className="search-bar">
     
     <input 
     value ={this.state.term}
