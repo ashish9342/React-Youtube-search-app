@@ -45,9 +45,7 @@ class SearchBar extends Component {
     <input 
     value ={this.state.term}
     onChange = {
-      (event) => this.setState({
-        term: event.target.value
-      })
+      (event) => this.onInputChange(event.target.value)
     }
     /> 
     
@@ -56,6 +54,11 @@ class SearchBar extends Component {
     );
 
   }
+onInputChange(term){
+  this.setState({term});
+  this.props.onSearchTermChange(term);
+}
+
   // controlled form input
 // Value of input : {this.state.term}
   // onInputChange(event) {
