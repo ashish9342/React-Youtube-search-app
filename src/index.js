@@ -9,6 +9,8 @@ import {
 
 import SearchBar from './components/search_bar';
 import VideoList  from './components/video_list';
+import VideoDetails from './components/video_details';
+
 
 
 
@@ -30,21 +32,31 @@ class App extends Component {
         super(props);
 
         this.state = {
-            videos: []
+            videos: [],
+            selectedVideo:null
         };
 
         YTSearch({
             key: keys.youtube,
             term: 'reactjs'
         },  (videos) =>{
-           this.setState({videos});
+           this.setState(
+            //    {videos}
+            {
+                videos:videos,
+                selectedVideo : videos[0]
+            }
+               );
         });
     }
 
     render() {
         return ( <div>
             <SearchBar />
-            < VideoList videos ={this.state.videos}/>
+            < VideoDetails video = {this.state.selectedVideo}/>
+            < VideoList
+            onVideoSelect={ selectedVideo =>this.setState({selectedVideo})} 
+            videos ={this.state.videos}/>
             </div>
         );
     }
